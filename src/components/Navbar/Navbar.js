@@ -1,40 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Buttons/Button";
 import "./Navbar.css";
 
 
 
-class Navbar extends Component {
-    state = { clicked: false };
+export default function Navbar() {
+    const [clicked, setClicked] = React.useState(false);
 
-    handleClick = () => {
-        this.setState({ clicked: !this.state.clicked })
+    const handleClick = () => {
+        setClicked(!clicked)
     };
-    render() {
-        return (
-            <nav className="NavbarItems">
-                <h1 className="navbar-logo">Verdu<i className="fas fa-leaf"></i></h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+    return (
+        <nav className="NavbarItems">
+            <h1 className="navbar-logo">Verdu<i className="fas fa-leaf"></i></h1>
+            <div className="menu-icon" onClick={handleClick}>
+                <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
 
-                </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <a className={item.cName} href={item.url}>
-                                    {item.title}
-                                </a>
-                            </li>
-                        )
-                    })}
+            </div>
+            <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
+                {MenuItems.map((item, index) => {
+                    return (
+                        <li key={index}>
+                            <a className={item.cName} href={item.url}>
+                                {item.title}
+                            </a>
+                        </li>
+                    )
+                })}
 
-                </ul>
-                <Button>Sign Up</Button>
-            </nav>
-        )
-    }
+            </ul>
+            <Button>Sign Up</Button>
+        </nav>
+    )
 }
 
-export default Navbar;
