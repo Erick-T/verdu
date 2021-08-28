@@ -1,0 +1,40 @@
+h2,h3,h4,h5{
+   color: #000000; 
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.ItemList{
+    margin: 8px;
+}
+
+.imgSize{
+    height: 200px;
+    width: 200px;
+}
+
+@media screen and (max-width: 432px){
+    .ItemListContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 433px) and (max-width: 650px){
+    .ItemListContainer{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+    }        
+}
+
+@media screen and (min-width: 651px){
+    .ItemListContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);   
+    }
+}
+
+
+   

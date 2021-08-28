@@ -1,0 +1,20 @@
+.contenedor-carrito{
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+div, i{
+    width: 1fr;
+    height: 1fr;
+    color: #fff;
+}
+
+div > i :hover{
+    background-color:rgba(168, 245, 222, 0.692);
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}

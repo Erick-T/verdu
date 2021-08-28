@@ -2,6 +2,7 @@ import React from 'react';
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Buttons/Button";
 import "./Navbar.css";
+import { CartWidget } from "../CartWidget/CartWidget";
 
 
 
@@ -13,12 +14,17 @@ export default function Navbar() {
     };
     return (
         <nav className="NavbarItems">
+
+
+
             <h1 className="navbar-logo">Verdu<i className="fas fa-leaf"></i></h1>
             <div className="menu-icon" onClick={handleClick}>
                 <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
 
             </div>
             <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
+
+
                 {MenuItems.map((item, index) => {
                     return (
                         <li key={index}>
@@ -30,7 +36,12 @@ export default function Navbar() {
                 })}
 
             </ul>
+
             <Button>Sign Up</Button>
+
+            <CartWidget />
+
+
         </nav>
     )
 }
