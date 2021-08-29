@@ -9,13 +9,18 @@ h2{
 
 
 
+
 .ItemList{
     margin: auto;
+    border: 1px solid;
+    border-radius: 5px;
+    
 }
 
 .imgSize{
     height: 200px;
     width: 200px;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 600px){
@@ -31,29 +36,21 @@ h2{
         padding-top: 6px;
     }
 
-    h2,h3,h5{
+    h2,h3,h4,h5{
         padding-left: 4px;
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 960px){
+@media screen and (min-width: 600px){
     .ItemListContainer{
-        display:grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px 1fr));
+        display:flex;
+        flex-wrap: wrap;
     }        
 
      .imgSize{
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
     }
 }
-
-@media screen and (min-width: 651px){
-    .ItemListContainer{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);   
-    }
-}
-
 
    
