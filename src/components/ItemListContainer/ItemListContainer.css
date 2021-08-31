@@ -18,8 +18,8 @@ h2{
 }
 
 .imgSize{
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     border-radius: 5px;
 }
 
@@ -28,6 +28,7 @@ h2{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;        
     }
 
     .imgSize{

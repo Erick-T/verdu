@@ -2,11 +2,13 @@ import React from 'react';
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Buttons/Button";
 import "./Navbar.css";
+import { CartWidget } from '../CartWidget/CartWidget';
 
 
 
-export default function Navbar(props) {
-    const { children } = props;
+
+export default function Navbar() {
+
     const [clicked, setClicked] = React.useState(false);
 
     const handleClick = () => {
@@ -44,7 +46,7 @@ export default function Navbar(props) {
 
             <Button>Sign Up</Button>
 
-            {children}
+            <CartWidget />
 
 
         </nav>

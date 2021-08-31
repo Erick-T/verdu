@@ -1,8 +1,36 @@
-label{
-    color: black;
+.listContainer{
+  padding-top: 7px;
+  display:flex;
+  flex-direction: column;   
 }
 
-button{
-  
-    color: black;
+
+.listContainer div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.listContainer div button{
+  align-self: flex-end;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgb(34, 233, 150) 0%, rgb(110, 224, 190) 100% );
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
+  cursor:pointer;
+  transition:opacity 0.2s ease-in-out;
+}
+
+.listContainer div button:hover{
+  opacity:0.8;
+}
+
+.listContainer div button:disabled{
+    opacity: 0.3;
 }

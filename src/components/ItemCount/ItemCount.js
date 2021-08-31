@@ -1,35 +1,49 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './ItemCount.css'
-export default function ItemCount(stock, initial) {
+export default function ItemCount(props) {
+
+    const { stock } = props;
 
 
+    const [cantidad, setCantidad] = useState(1);
+    const [controlStock, setcontrolStock] = useState(!true);
+    const [minimo, setminimo] = useState(true)
 
-    let [contador, setContador] = useState(initial)
+    useEffect(() => { console.log("Componente montado") }, [])
 
-    const sumar = () => {
-        if (contador < stock) {
-            setContador(contador + 1)
+    const sumar = (stock) => {
+        if (cantidad < stock) {
+            setminimo(false)
+            setCantidad(cantidad + 1)
+        }
+        else {
+            setcontrolStock(true)
         }
     }
+    const restar = (stock) => {
+        if (cantidad > 1) {
+            setCantidad(cantidad - 1)
 
-    const restar = () => {
-        setContador(contador - 1)
-    }
-
-    const agregar = () => {
-        if (stock > 0) {
-            console.log("agregado")
+        } else {
+            setcontrolStock(true)
+            setminimo(true)
         }
+        if (cantidad < stock) {
+            setcontrolStock(false)
+        }
+
     }
 
     return (
-
-        <div>
-            <label>{contador}</label>
-            <button disabled={contador > stock ? true : false} onClick={sumar}>+</button>
-            <button disabled={contador = 1 ? true : false} onClick={restar}>-</button>
-            <br />
-            <button disabled={stock > 0 ? false : true} onClick={agregar}>Agregar al carrito</button>
+        <div className="listContainer">
+            <div>
+                <button disabled={controlStock} onClick={() => sumar(stock)} className="botones" >+</button>
+                <h3>{cantidad}</h3>
+                <button disabled={minimo} onClick={() => restar(stock)} className="botones">-</button>
+            </div>
+            <div>
+                <button disabled={controlStock} onClick={() => setCantidad(1)} className="botones">Agregar al carrito</button>
+            </div>
         </div>
     )
 
